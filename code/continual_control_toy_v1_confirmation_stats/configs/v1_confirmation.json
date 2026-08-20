@@ -1,0 +1,18 @@
+{
+  "base_config": "v1_development.json",
+  "experiment_id": "continual_control_toy_v1_confirmation",
+  "analysis": {
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 884219,
+    "confidence": 0.95,
+    "require_positive_prediction_direction": true,
+    "require_positive_mitigation_direction": true
+  },
+  "confirmation": {
+    "frozen_development_config_sha256": "4546d16604b47ec81b7443d9666576c5e93f929ed23a44fa2eff74945b3ef19c",
+    "primary_prediction_baseline": "return_slope",
+    "primary_mitigation_baseline": "return_trigger",
+    "decision_rule": "both paired whole-stream 95% bootstrap lower bounds exceed zero",
+    "no_retuning": true
+  }
+}

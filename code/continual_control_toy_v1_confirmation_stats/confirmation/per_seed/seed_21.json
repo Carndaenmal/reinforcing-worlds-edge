@@ -1,0 +1,126 @@
+{
+  "config_path": "/home/mila/d/dane.malenfant/continual_core/configs/continual_control/v1_confirmation.json",
+  "config_sha256": "71be4a27de1e2f0c48806675e1829cc49a6a15a488a8f335e86762cdd5a8e38e",
+  "events": [
+    {
+      "down_start": 932,
+      "event": 0,
+      "low_gain": 0.046993197440939605,
+      "low_start": 1232,
+      "recovery_start": 2412,
+      "up_start": 1959
+    },
+    {
+      "down_start": 3077,
+      "event": 1,
+      "low_gain": 0.05285896830642733,
+      "low_start": 3480,
+      "recovery_start": 4773,
+      "up_start": 4282
+    },
+    {
+      "down_start": 5501,
+      "event": 2,
+      "low_gain": 0.06578682507361525,
+      "low_start": 5862,
+      "recovery_start": 7036,
+      "up_start": 6599
+    },
+    {
+      "down_start": 7850,
+      "event": 3,
+      "low_gain": 0.05618323707002935,
+      "low_start": 8317,
+      "recovery_start": 9330,
+      "up_start": 8981
+    },
+    {
+      "down_start": 10279,
+      "event": 4,
+      "low_gain": 0.056624634642176395,
+      "low_start": 10598,
+      "recovery_start": 11704,
+      "up_start": 11390
+    }
+  ],
+  "gain_estimation_mae": 0.0731828179293785,
+  "gain_schedule_max_step": 0.003176689341863659,
+  "matched_intervention_count": true,
+  "prediction": {
+    "at_risk_checkpoints": 645,
+    "average_precision": {
+      "checkpoint_time": 0.05965312328012376,
+      "random": 0.09795286066508145,
+      "return_level": 0.1736670188654471,
+      "return_slope": 0.3468364017281499,
+      "state_magnitude": 0.25608871869932553,
+      "structural_risk": 0.6589302560533332,
+      "transition_cusum": 0.05380971236392269
+    },
+    "failure_incidents": 5,
+    "positive_labels": 58,
+    "recoveries": 5,
+    "return_lead_steps": [
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "structural_brier": 0.08252359601922396,
+    "structural_false_alarm_rate": 0.0,
+    "structural_lead_steps": [
+      80,
+      100,
+      63,
+      104,
+      145
+    ]
+  },
+  "random_matched_shift": 4987,
+  "reset_count": 0,
+  "seed": 21,
+  "steps": 18000,
+  "treatments": {
+    "certificate": {
+      "backup_fraction": 0.2648333333333333,
+      "backup_steps": 4767,
+      "cumulative_reward": 17904.52993990656,
+      "failure_steps": 0,
+      "mean_reward": 0.9946961077725867,
+      "switches": 10
+    },
+    "never": {
+      "backup_fraction": 0.0,
+      "backup_steps": 0,
+      "cumulative_reward": 9069.262038454955,
+      "failure_steps": 4764,
+      "mean_reward": 0.5038478910252753,
+      "switches": 0
+    },
+    "oracle": {
+      "backup_fraction": 0.26616666666666666,
+      "backup_steps": 4791,
+      "cumulative_reward": 17904.212080254383,
+      "failure_steps": 0,
+      "mean_reward": 0.9946784489030213,
+      "switches": 10
+    },
+    "random_matched": {
+      "backup_fraction": 0.2648333333333333,
+      "backup_steps": 4767,
+      "cumulative_reward": 8995.65646178593,
+      "failure_steps": 4763,
+      "mean_reward": 0.49975869232144055,
+      "switches": 10
+    },
+    "return_trigger": {
+      "backup_fraction": 0.26961111111111113,
+      "backup_steps": 4853,
+      "cumulative_reward": 9026.636149212247,
+      "failure_steps": 4763,
+      "mean_reward": 0.501479786067347,
+      "switches": 10
+    }
+  }
+}

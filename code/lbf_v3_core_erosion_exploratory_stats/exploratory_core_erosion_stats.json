@@ -1,0 +1,54 @@
+{
+  "analysis_status": "exploratory_post_hoc_model_selection_only",
+  "prepared_date": "2026-07-31",
+  "source_experiment_id": "lbf_theory_v3_development",
+  "source_config_sha256": "ee9afcdaf8f27f0148bc45bfc6446517a9c8f9e2d6566980459072a9695d1b52",
+  "independent_unit": "complete_peer_learning_trajectory",
+  "pairing_ids": [5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007],
+  "pairing_count": 8,
+  "positive_checkpoints_per_pairing": 6,
+  "primary_exploratory_score": {
+    "name": "three_checkpoint_core_erosion",
+    "formula": "max(0, coverage_lcb_uL3[t-3] - coverage_lcb_uL3[t])",
+    "window_checkpoints": 3,
+    "mean_average_precision": 0.9711729242979243
+  },
+  "strongest_simple_baseline": {
+    "name": "return_slope",
+    "mean_average_precision": 0.7427807250684504
+  },
+  "paired_contrast": {
+    "estimate": 0.22839219922947396,
+    "lower": 0.17067666717698007,
+    "upper": 0.2772578047988425,
+    "confidence": 0.95,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20260831
+  },
+  "nearby_window_sensitivity_mean_ap": {
+    "erosion_1": 0.909475,
+    "erosion_2": 0.965278,
+    "erosion_3": 0.971173,
+    "erosion_4": 0.962649,
+    "erosion_5": 0.925203
+  },
+  "registered_v3_result_for_context": {
+    "absolute_structural_risk_mean_ap": 0.5259806744181744,
+    "return_slope_mean_ap": 0.7427807250684504,
+    "paired_contrast_estimate": -0.21680005065027597,
+    "paired_contrast_lower": -0.2883626654743722,
+    "paired_contrast_upper": -0.15202776866064896,
+    "registered_prediction_gate_passed": false
+  },
+  "per_pairing": [
+    {"pairing_id": 5000, "erosion_3_ap": 0.9761904761904763, "return_slope_ap": 0.6711082455763308, "difference": 0.3050822306141455},
+    {"pairing_id": 5001, "erosion_3_ap": 0.9102564102564102, "return_slope_ap": 0.7227777777777779, "difference": 0.1874786324786324},
+    {"pairing_id": 5002, "erosion_3_ap": 0.9583333333333334, "return_slope_ap": 0.7918300653594771, "difference": 0.16650326797385628},
+    {"pairing_id": 5003, "erosion_3_ap": 0.9761904761904763, "return_slope_ap": 0.7299603174603174, "difference": 0.24623015873015885},
+    {"pairing_id": 5004, "erosion_3_ap": 1.0, "return_slope_ap": 0.7604617604617605, "difference": 0.2395382395382395},
+    {"pairing_id": 5005, "erosion_3_ap": 0.9484126984126985, "return_slope_ap": 0.6338080959520239, "difference": 0.31460460246067457},
+    {"pairing_id": 5006, "erosion_3_ap": 1.0, "return_slope_ap": 0.7080571137174911, "difference": 0.29194288628250886},
+    {"pairing_id": 5007, "erosion_3_ap": 1.0, "return_slope_ap": 0.9242424242424242, "difference": 0.0757575757575758}
+  ]
+}
+

@@ -1,0 +1,49 @@
+{
+  "experiment_id": "continual_cue_mnist_v4_confirmation",
+  "analysis_split": "prospective_v4_confirmation",
+  "primary_algorithm": "supervised",
+  "registered_confirmation_passed": true,
+  "config_sha256": "7f7d6b358510906883a73fd3978b99f5bf14c748731a88ed499d5db7e8d94486",
+  "independent_unit": "complete_uninterrupted_model_stream",
+  "seed_count": 64,
+  "seeds": "8200..8263",
+  "bootstrap_replicates": 10000,
+  "confidence": 0.95,
+  "prediction": {
+    "score": "max(0, coverage_u3_lcb[t-3] - coverage_u3_lcb[t])",
+    "comparator": "cue_label_association",
+    "core_average_precision": 0.38422410454275513,
+    "comparator_average_precision": 0.3450254636520126,
+    "paired_advantage": {
+      "estimate": 0.039198640890742514,
+      "lower": 0.022378588801162547,
+      "upper": 0.05549780389420389
+    }
+  },
+  "mitigation": {
+    "certificate_reward": 0.9499501562499999,
+    "accuracy_trigger_reward": 0.938237265625,
+    "oracle_reward": 0.9501856510416667,
+    "random_matched_reward": 0.9283637760416668,
+    "never_intervene_reward": 0.8960229166666667,
+    "paired_certificate_advantage": {
+      "estimate": 0.011712890624999975,
+      "lower": 0.01130944335937497,
+      "upper": 0.01211524023437496
+    }
+  },
+  "diagnostics": {
+    "mean_structural_warning_lead_checkpoints": 4.678832116788321,
+    "eligible_stream_fraction": 0.984375,
+    "nuisance_core_alarm_fraction": 0.0,
+    "minimum_initial_core_lcb": 0.9730777809063715,
+    "reset_count": 0
+  },
+  "integrity": {
+    "all_64_streams_present": true,
+    "disjoint_monitoring": true,
+    "matched_random_intervention": true,
+    "prediction_lower_bound_above_zero": true,
+    "mitigation_lower_bound_above_zero": true
+  }
+}

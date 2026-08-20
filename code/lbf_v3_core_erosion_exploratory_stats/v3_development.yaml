@@ -1,0 +1,61 @@
+protocol: coordination_fork_probe_v3
+experiment_id: lbf_theory_v3_development
+artifact_root: /network/scratch/d/dane.malenfant/continual_core_runtime/lbf_runs
+pairing_ids: [5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007]
+discovery_pairing_ids: [6000, 6001, 6002, 6003]
+checkpoints: 72
+peer:
+  policy_class: feed_forward_logistic_route_policy
+  update: sampled_reinforce_population_batch
+  initial_bias: -4.6
+  initial_cue_weight: 1.5
+  initial_style_logit: -1.0
+  initial_std: 0.04
+  anchor_updates: 16
+  gradient_batch_episodes: 512
+  learning_rate: 0.30
+  style_learning_rate: 0.35
+  updates_per_checkpoint: 32
+  left_cue: -1.0
+  right_training_cue: 0.0
+  continuation_training_cue: 0.0
+  right_cue: 1.0
+task:
+  name: lbf_coordination_fork
+  fixed_probe: neutral_wait_then_follow
+  probe_success: 0.995
+  robust_success: 0.970
+  mismatch_recovery_probability: 0.03
+  style_latency_cost: 0.015
+  intervention_cost: 0.010
+schedule:
+  initial_stable: [3, 4]
+  hazard: [12, 12]
+  right_plateau: [5, 5]
+  recovery: [9, 10]
+  recovered_stable: [2, 3]
+  nuisance: [3, 4]
+  nuisance_gap: [2, 3]
+monitoring:
+  probe_episodes: 500
+  focal_episodes: 500
+  performance_episodes: 500
+  confidence: 0.95
+  core_membership_threshold: 0.90
+  core_recovery_threshold: 0.94
+  performance_failure_threshold: 0.70
+  performance_healthy_threshold: 0.90
+  performance_recovery_threshold: 0.80
+  precursor_stable_fraction: 0.95
+  future_failure_horizon: 3
+discovery:
+  episodes_per_pairing: 2000
+  minimum_coverage: 0.95
+  maximum_length: 4
+  peer_only: true
+gates:
+  maximum_nuisance_core_alarms: 0
+statistics:
+  bootstrap_replicates: 2000
+  bootstrap_seed: 20260831
+  confidence: 0.95

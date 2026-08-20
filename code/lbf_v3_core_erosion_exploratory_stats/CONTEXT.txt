@@ -1,0 +1,68 @@
+LBF V3 CORE-EROSION EXPLORATORY REANALYSIS
+Prepared: 2026-07-31 (America/Toronto)
+
+STATUS AND INTERPRETATION
+-------------------------
+This package is an exploratory, post-hoc reanalysis of the eight excluded
+development pairings from LBF Track B V3. It is useful for selecting a new V4
+prediction statistic, but it cannot replace the pre-registered V3 result and
+must not be described as confirmation.
+
+The pre-registered V3 primary predictor was absolute structural risk:
+
+    1 - coverage_lcb_uL3[t]
+
+It had mean average precision (AP) 0.525981, whereas the strongest simple
+baseline, one-checkpoint monitoring-return slope, had AP 0.742781. The original
+paired contrast was -0.216800 with 95% bootstrap interval
+[-0.288363, -0.152028]. V3 therefore failed its registered prediction gate.
+
+EXPLORATORY STATISTIC
+---------------------
+The reanalysis evaluates active three-checkpoint erosion of the same
+operational Wilson lower confidence bound (LCB):
+
+    erosion_3[t] = max(0, coverage_lcb_uL3[t-3]
+                            - coverage_lcb_uL3[t])
+
+The three-checkpoint window matches the already frozen prospective failure
+horizon. No environment trajectory, candidate, target label, threshold,
+pairing, or simple baseline was changed.
+
+EXPLORATORY RESULT
+------------------
+Mean erosion_3 AP:                         0.971173
+Mean return-slope AP:                      0.742781
+Mean paired AP difference:                +0.228392
+Pairing-bootstrap 95% interval:           [+0.170677, +0.277258]
+Independent unit:                         complete peer-learning trajectory
+Number of independent pairings:           8
+Positive prospective checkpoints/pairing: 6
+Bootstrap replicates:                     2,000
+Bootstrap seed:                           20260831
+
+Erosion_3 beat return slope in all eight pairings. Nearby erosion windows also
+had higher mean AP than return slope: one checkpoint 0.909475, two checkpoints
+0.965278, four checkpoints 0.962649, and five checkpoints 0.925203. These
+nearby-window values are sensitivity diagnostics, not separately selected
+headline tests.
+
+SCIENTIFIC NEXT STEP
+--------------------
+A new V4 protocol may prospectively freeze erosion_3 as its primary predictor
+on entirely new excluded pairings while retaining return slope and every other
+baseline. V4 must also require a fresh structural exit for each repeated
+failure; V3's lead-time helper can reuse an exit preceding the first failure
+when associating a later failure.
+
+PACKAGE CONTENTS
+----------------
+CONTEXT.txt
+exploratory_core_erosion_stats.json
+per_pairing_core_erosion.csv
+development_summary.json                 original V3 aggregate
+v3_development.yaml                      frozen V3 configuration
+LBF_V3_DEVELOPMENT_PROTOCOL.md           frozen V3 protocol
+pairing_5000/summary.json ... pairing_5007/summary.json
+                                         original raw trajectory summaries
+

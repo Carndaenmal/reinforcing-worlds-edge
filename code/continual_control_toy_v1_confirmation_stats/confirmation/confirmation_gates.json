@@ -1,0 +1,14 @@
+{
+  "all_pass": true,
+  "all_streams_present": true,
+  "confirmatory_mitigation_interval_above_zero": true,
+  "confirmatory_prediction_interval_above_zero": true,
+  "continuous_gain_schedule": true,
+  "frozen_return_slope_baseline": true,
+  "incident_and_recovery_target": true,
+  "matched_random_intervention": true,
+  "no_resets": true,
+  "online_estimator_usable": true,
+  "randomized_repeated_drift": true,
+  "structural_precedence": true
+}

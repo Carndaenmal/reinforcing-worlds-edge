@@ -1,0 +1,13 @@
+{
+  "all_pass": true,
+  "all_streams_present": true,
+  "continuous_gain_schedule": true,
+  "incident_and_recovery_target": true,
+  "matched_random_intervention": true,
+  "no_resets": true,
+  "online_estimator_usable": true,
+  "positive_mitigation_direction": true,
+  "positive_prediction_direction": true,
+  "randomized_repeated_drift": true,
+  "structural_precedence": true
+}

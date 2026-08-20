@@ -1,0 +1,159 @@
+SINGLE-AGENT CONTINUAL-CONTROL CONFIRMATION STATISTICS
+=====================================================
+
+Package created: 2026-07-31 (America/Toronto)
+Experiment: continual_control_toy_v1_confirmation
+Status: COMPLETE; all registered confirmation and integrity gates passed.
+
+SCIENTIFIC QUESTION
+-------------------
+
+This controlled construction tests whether erosion of an online structural
+quantity can predict future performance failure earlier and more accurately
+than ordinary performance monitors, and whether acting on that structural
+warning improves cumulative reward.
+
+This is an independent single-agent construction. It supports the proposed
+mechanism in a no-reset continual-control setting; it is not evidence that the
+peer-learning LBF or Overcooked conditions have been validated.
+
+TASK AND SIGNAL
+---------------
+
+One uninterrupted scalar control stream follows
+
+    x[t+1] = a*x[t] + b[t]*u[t] + w[t].
+
+The actuator gain b[t] undergoes five seed-randomized, continuous
+high-to-low-to-high drift-and-recovery events. Physical state, the online RLS
+gain estimate, monitor state, controller state, and intervention state are
+never reset at drift boundaries.
+
+The registered structural quantity is estimated one-step robust viability
+coverage over a fixed reference state interval and bounded disturbance set.
+The operational risk score is one minus this estimated coverage. The true
+latent actuator gain is used only for the oracle diagnostic, never by the
+operational trigger.
+
+DATA SEPARATION AND INFERENCE
+-----------------------------
+
+Development:
+
+    32 complete streams, seeds 5000--5031.
+
+Confirmation:
+
+    64 untouched complete streams, seeds 0--63.
+
+The strongest simple predictor selected on development was return_slope and
+was frozen before confirmation. Confirmation did not retune the plant,
+drift distribution, estimator, controllers, thresholds, prediction target,
+or interventions.
+
+The independent statistical unit is a complete uninterrupted seed stream.
+The 95% confidence intervals use 10,000 percentile-bootstrap resamples of the
+64 complete streams. Checkpoints, drift incidents, and time steps are not
+treated as independent research replicates.
+
+CONFIRMATORY RESULTS
+--------------------
+
+Prediction:
+
+    Structural-risk average precision             0.5921545
+    Frozen return-slope average precision          0.3551499
+    Paired AP advantage                            0.2370046
+    95% CI                                         [0.2233465, 0.2509018]
+
+    Mean structural warning lead                  83.24375 steps
+    Mean return-signal warning lead                 6.071875 steps
+
+Mitigation:
+
+    Certificate-trigger mean reward                0.9944425
+    Return-trigger mean reward                     0.4577800
+    Certificate minus return-trigger               0.5366625
+    95% CI                                         [0.5305828, 0.5428065]
+
+    Never-switch mean reward                       0.4603512
+    Certificate minus never-switch                 0.5340913
+    95% CI                                         [0.5278969, 0.5403638]
+
+    Random-matched mean reward                     0.5355816
+    Certificate minus random-matched               0.4588609
+    95% CI                                         [0.4360537, 0.4808602]
+
+    Oracle mean reward                             0.9944680
+
+Both registered co-primary whole-stream confidence intervals have lower
+bounds above zero. The intersection-union confirmation rule therefore passes.
+All 64 streams contain five incident failures and five recoveries on average;
+all registered confirmation and integrity gates pass.
+
+INTERPRETATION
+--------------
+
+Within this preregistered controlled construction, online robust-viability
+erosion is a substantially earlier and more accurate predictor of future
+return failure than the strongest frozen performance baseline. Triggering the
+backup controller from the structural certificate produces near-oracle reward
+and materially outperforms return-triggered, never-switch, and
+intervention-count-matched random controls.
+
+The construction is deliberately aligned with the theory, so these results
+establish a strong mechanism demonstration rather than universal external
+validity. Peer-dependent validation must be established separately in LBF or
+Overcooked.
+
+PACKAGE CONTENTS
+----------------
+
+    confirmation/confirmation_summary.json
+        Aggregate confirmation estimates and whole-stream intervals.
+
+    confirmation/confirmation_gates.json
+        Registered confirmation and integrity decisions.
+
+    confirmation/per_seed/seed_*.json
+        Statistics, schedules, incidents, lead times, and treatment outcomes
+        for every untouched confirmation stream.
+
+    development/development_summary.json
+    development/development_gates.json
+    development/per_seed/seed_*.json
+        Excluded development statistics documenting baseline selection and
+        eligibility for confirmation.
+
+    protocols/
+        Development and confirmation protocols frozen before their respective
+        registered runs.
+
+    configs/
+        Exact development and confirmation configurations.
+
+    provenance/SHA256SUMS.txt
+        SHA-256 checksums for every other file in this package.
+
+The large per-step NPZ arrays are intentionally omitted to keep this a compact
+statistics package. On the originating cluster they remain under:
+
+    /network/scratch/d/dane.malenfant/continual_core_runtime/
+    continual_control_runs/continual_control_toy_v1_confirmation/
+    confirmation/streams/
+
+and the corresponding continual_control_toy_v1_development directory.
+
+REPRODUCIBILITY IDENTIFIERS
+---------------------------
+
+Development configuration SHA-256:
+    4546d16604b47ec81b7443d9666576c5e93f929ed23a44fa2eff74945b3ef19c
+
+Confirmation composite configuration SHA-256:
+    71be4a27de1e2f0c48806675e1829cc49a6a15a488a8f335e86762cdd5a8e38e
+
+Confirmation Slurm jobs:
+    validation 10256164
+    streams    10256165
+    aggregate  10256166

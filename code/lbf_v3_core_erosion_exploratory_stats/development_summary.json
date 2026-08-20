@@ -1,0 +1,68 @@
+{
+  "analysis_split": "excluded_development",
+  "baseline_coverages": {
+    "5000": 0.9979919678714859,
+    "5001": 0.9838709677419355,
+    "5002": 0.988,
+    "5003": 0.9899396378269618,
+    "5004": 0.9879032258064516,
+    "5005": 0.9959839357429718,
+    "5006": 0.9919191919191919,
+    "5007": 0.9919517102615694
+  },
+  "config_sha256": "ee9afcdaf8f27f0148bc45bfc6446517a9c8f9e2d6566980459072a9695d1b52",
+  "experiment_id": "lbf_theory_v3_development",
+  "gates": {
+    "all_pass": false,
+    "baseline_core_coverage": true,
+    "independent_discovery_candidate": true,
+    "nuisance_specificity": true,
+    "positive_development_mitigation_direction": true,
+    "positive_development_prediction_direction": false,
+    "recovery_present": true,
+    "structural_precedence": true,
+    "two_incident_failures": true
+  },
+  "independent_unit": "complete_peer_learning_trajectory",
+  "mean_average_precision": {
+    "checkpoint_index": 0.12620944820347857,
+    "compatible_mass": 0.5213510447885448,
+    "monitoring_success": 0.5008839091192032,
+    "occupancy_distance": 0.11154677024298205,
+    "policy_tv": 0.35002510378381124,
+    "probe_return": 0.12773666748736326,
+    "random": 0.14007043812801662,
+    "return_slope": 0.7427807250684504,
+    "structural_risk": 0.5259806744181744
+  },
+  "mean_rewards": {
+    "certificate": 0.9852638888888889,
+    "never": 0.8942013888888889,
+    "oracle": 0.9898298611111112,
+    "random_matched": 0.9387465277777778,
+    "return_trigger": 0.9831666666666665
+  },
+  "mean_structural_lead_checkpoints": 6.0625,
+  "mitigation_contrast": {
+    "estimate": 0.0020972222222222364,
+    "lower": 0.0005138888888888554,
+    "upper": 0.003576562500000003
+  },
+  "pairing_ids": [
+    5000,
+    5001,
+    5002,
+    5003,
+    5004,
+    5005,
+    5006,
+    5007
+  ],
+  "prediction_contrast": {
+    "estimate": -0.21680005065027597,
+    "lower": -0.2883626654743722,
+    "upper": -0.15202776866064896
+  },
+  "primary_candidate": "uL3",
+  "strongest_simple_baseline": "return_slope"
+}

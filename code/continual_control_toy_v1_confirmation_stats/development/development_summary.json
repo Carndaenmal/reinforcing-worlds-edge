@@ -1,0 +1,131 @@
+{
+  "average_precision": {
+    "checkpoint_time": {
+      "estimate": 0.06230534250871273,
+      "lower": 0.06150798003222133,
+      "upper": 0.06315898023303194
+    },
+    "random": {
+      "estimate": 0.09897614580827724,
+      "lower": 0.09474696230216711,
+      "upper": 0.10349243631439753
+    },
+    "return_level": {
+      "estimate": 0.20463814209734127,
+      "lower": 0.19228406528672023,
+      "upper": 0.21720313879904812
+    },
+    "return_slope": {
+      "estimate": 0.3542802900640048,
+      "lower": 0.3400888787528247,
+      "upper": 0.36774412106849963
+    },
+    "state_magnitude": {
+      "estimate": 0.2895592362303,
+      "lower": 0.2795368752654025,
+      "upper": 0.2999803532905023
+    },
+    "structural_risk": {
+      "estimate": 0.601882816931976,
+      "lower": 0.5860306387280436,
+      "upper": 0.6180513652661731
+    },
+    "transition_cusum": {
+      "estimate": 0.05563786412188262,
+      "lower": 0.05497715798344634,
+      "upper": 0.056247661171328685
+    }
+  },
+  "config_sha256": "4546d16604b47ec81b7443d9666576c5e93f929ed23a44fa2eff74945b3ef19c",
+  "experiment_id": "continual_control_toy_v1_development",
+  "independent_unit": "complete_uninterrupted_seed_stream",
+  "mean_failure_incidents": 5.0,
+  "mean_recoveries": 5.0,
+  "mean_return_lead_steps": 6.1125,
+  "mean_reward": {
+    "certificate": {
+      "estimate": 0.9944980213171024,
+      "lower": 0.994457021693378,
+      "upper": 0.9945389273820314
+    },
+    "never": {
+      "estimate": 0.4682248510249071,
+      "lower": 0.46052156987669923,
+      "upper": 0.4754179896628756
+    },
+    "oracle": {
+      "estimate": 0.9945213331905773,
+      "lower": 0.9944813111566854,
+      "upper": 0.9945577523697967
+    },
+    "random_matched": {
+      "estimate": 0.5290411318824004,
+      "lower": 0.504915382639445,
+      "upper": 0.5542385612369909
+    },
+    "return_trigger": {
+      "estimate": 0.4656886676087487,
+      "lower": 0.45814131640232564,
+      "upper": 0.4734095517197579
+    }
+  },
+  "mean_structural_lead_steps": 85.71875,
+  "mitigation_contrasts": {
+    "certificate_minus_never": {
+      "estimate": 0.5262731702921952,
+      "lower": 0.5189978180424526,
+      "upper": 0.5335352431852333
+    },
+    "certificate_minus_random_matched": {
+      "estimate": 0.4654568894347019,
+      "lower": 0.4380225276808201,
+      "upper": 0.4907676303028653
+    },
+    "certificate_minus_return_trigger": {
+      "estimate": 0.5288093537083536,
+      "lower": 0.521461424051015,
+      "upper": 0.5359981973269433
+    }
+  },
+  "primary_prediction_contrast": {
+    "estimate": 0.24760252686797124,
+    "lower": 0.22749749519789828,
+    "upper": 0.2665797227909564
+  },
+  "seed_count": 32,
+  "seeds": [
+    5000,
+    5001,
+    5002,
+    5003,
+    5004,
+    5005,
+    5006,
+    5007,
+    5008,
+    5009,
+    5010,
+    5011,
+    5012,
+    5013,
+    5014,
+    5015,
+    5016,
+    5017,
+    5018,
+    5019,
+    5020,
+    5021,
+    5022,
+    5023,
+    5024,
+    5025,
+    5026,
+    5027,
+    5028,
+    5029,
+    5030,
+    5031
+  ],
+  "strongest_simple_baseline": "return_slope"
+}
