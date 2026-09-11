@@ -431,7 +431,7 @@ def fig_reduction():
     rbox(76, 10.5, 18, 5.2, "#E4F3F0", CORE, lw=1.0, ls=(0, (2, 2)), z=1)
     ax.text(52, 6.3, "coverage margin persists under bounded peer drift", ha="center",
             fontsize=8.6, color=SUB)
-    ax.text(85, 6.3, r"certified survival $\Omega(1/\eta)$", ha="center", fontsize=8.6,
+    ax.text(85, 6.3, r"certified survival $\Omega(\frac{1}{\eta})$", ha="center", fontsize=8.6,
             color=DANGER, fontweight="bold")
 
     fig.subplots_adjust(left=0.01, right=0.99, top=0.99, bottom=0.01)
